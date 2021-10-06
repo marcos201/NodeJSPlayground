@@ -1,13 +1,19 @@
 const { response } = require ('express');
 
 const userGet = (req, res = response) => {
+    
     res.json(
         {msj: "get api desde controlador"});
 };
 
 const userPost = (req, res = response) => {
-    res.json(
-        {msj: "post api desde controlador"});
+
+    const body = req.body;
+
+    res.json({
+        msj: "post api desde controlador",
+        body
+        });
 };
 
 const userPut = (req, res = response) => {
