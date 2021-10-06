@@ -2,8 +2,12 @@ const { response } = require ('express');
 
 const userGet = (req, res = response) => {
     
-    res.json(
-        {msj: "get api desde controlador"});
+    const { name } = req.query;
+
+    res.json({
+        msj: "get api desde controlador",
+        name
+    });
 };
 
 const userPost = (req, res = response) => {
@@ -17,8 +21,13 @@ const userPost = (req, res = response) => {
 };
 
 const userPut = (req, res = response) => {
-    res.json(
-        {msj: "put api desde controlador"});
+
+    const {id} = req.params;
+
+    res.json({
+        msj: "put api desde controlador",
+        id
+    });
 };
 
 const userDelete = (req, res = response) => {
